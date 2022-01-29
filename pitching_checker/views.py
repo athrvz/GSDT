@@ -73,8 +73,8 @@ def transfer_data_to(sheet_name):
 
 
 # Create your views here.
-# available_sheets = ["4H", "Mobi", "One", "TW", "TH", "IPRL", "App", "T+", "CT", "VE", "AMT", "MPF", "FP", "Can"]
-available_sheets = ["4H", "Mobi"]
+available_sheets = ["4H", "Mobi", "One", "TW", "TH", "IPRL", "App", "T+", "CT", "VE", "AMT", "MPF", "FP", "Can"]
+# available_sheets = ["4H", "Mobi"]
 def index(request):
     return render(request, 'index.html')
 
