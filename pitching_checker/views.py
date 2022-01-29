@@ -24,7 +24,7 @@ worksheet_db = gc.open('testDB').sheet1
 # row_values will give list in which website col will be at 0
 website_index_db = 0
 website_index_copy = 0
-available_sheets_dic = {"4H": 2, "Mobi": 3}
+available_sheets_dic = {"4H": 2, "Mobi": 3, "One": 4, "TW": 5, "TH": 6, "IPRL": 7, "App": 8, "T+": 9, "CT": 10, "VE": 11, "AMT": 12, "MPF": 13, "FP": 14, "Can": 15}
 # available_sheets = ["4H", "Mobi"]
 
 def transfer_data_to(sheet_name):
