@@ -5,23 +5,78 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>pitching_checker</title>
 </head>
+
+
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        text-align: center;
+        margin-top: 360px;
+        font-family: 'Courier New', monospace;
+        font-size: 20px;
+    }
+    .btn {
+        font-family: 'Courier New', monospace;
+        font-weight: 900;
+        border: 1px solid #3498db;
+        background: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.8s;
+        position: relative;
+        overflow: hidden;
+        outline: auto;
+        outline-style: round;
+    }
+    .btn:hover{
+        color: #fff;
+    }
+    .btn::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: #3498db;
+        z-index: -1;
+        transition: 0.8s;
+        top: 0;
+        border-radius: 0 0 50% 50%;
+    }
+    .btn:hover::before {
+        height: 180%;
+    }
+
+</style>
+
+
 <body>
 	<div class="container">
+        <p class="directive">
+            <h2>
+                Click of the specific button to initiate the data transfer
+            </h2>
+        </p>
         
-		<button id="btn-4H">4H</button>
-		<button id="btn-Mobi">Mobi</button>
-        <button id="btn-One">One</button>
-		<button id="btn-TW">TW</button>
-		<button id="btn-TH">TH</button>
-		<button id="btn-IPRL">IPRL</button>
-		<button id="btn-App">App</button>
-		<button id="btn-Tplus">T+</button>
-		<button id="btn-CT">CT</button>
-		<button id="btn-VE">VE</button>
-		<button id="btn-AMT">AMT</button>
-		<button id="btn-MPF">MPF</button>
-		<button id="btn-FP">FP</button>
-		<button id="btn-Can">Can</button>
+		<button class="btn" id="btn-4H">4H</button>
+		<button class="btn" id="btn-Mobi">Mobi</button>
+        <button class="btn" id="btn-One">One</button>
+		<button class="btn" id="btn-TW">TW</button>
+		<button class="btn" id="btn-TH">TH</button>
+		<button class="btn" id="btn-IPRL">IPRL</button>
+		<button class="btn" id="btn-App">App</button>
+		<button class="btn" id="btn-Tplus">T+</button>
+		<button class="btn" id="btn-CT">CT</button>
+		<button class="btn" id="btn-VE">VE</button>
+		<button class="btn" id="btn-AMT">AMT</button>
+		<button class="btn" id="btn-MPF">MPF</button>
+		<button class="btn" id="btn-FP">FP</button>
+		<button class="btn" id="btn-Can">Can</button>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript">
