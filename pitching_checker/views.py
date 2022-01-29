@@ -97,7 +97,7 @@ available_sheets_dic = {"4H": 2, "Mobi": 3, "One": 4, "TW": 5, "TH": 6, "IPRL": 
 def transfer_data_to(sheet_name):
     # configuring the Copy worksheet
     worksheet_copy = gc.open('testCopy').worksheet(sheet_name)
-        
+    print(service.spreadsheets().get(spreadsheetId=sheet_name))
     for i in range(2, worksheet_db.row_count):
         found = False
         row_db = worksheet_db.row_values(i)
@@ -106,7 +106,7 @@ def transfer_data_to(sheet_name):
             break
         website = row_db[website_index_db]
         domain = get_domain(website)
-        # print("website: ", website)
+        print("website: ", website, ", domain: ", domain)
         for j in range(2, worksheet_copy.row_count):
             if found:
                 break
@@ -115,14 +115,14 @@ def transfer_data_to(sheet_name):
             if not row_copy:
                 break
             website_ = row_copy[website_index_copy]
-            # print("website_: ", website_)
+            print("website_: ", website_)
             if domain != website_:
                 continue
             elif domain == website_:
                 found = True
         if not found:
-            # print("not found")
-            worksheet_copy.insert_row([domain], i)
+            print("not found")
+            worksheet_copy.insert_row([domain], 2)
             worksheet_db.update_cell(i, available_sheets_dic[sheet_name], "YES")
 
 
