@@ -1,0 +1,54 @@
+from pprint import pprint # preety print
+
+import gspread # to interact with the google api
+
+gc = gspread.service_account(filename='gsdt_creds1.json') # credentials
+
+# configuring the DB -> Track worksheet 
+worksheet_db_track = gc.open('DB for email shortlister').worksheet('Track')
+# configuring the Copy worksheet
+worksheet_copy = gc.open('Copy of GP for email shortlister').sheet1
+
+# print("Configuration_Successful")
+
+###### GET data
+
+# To get all records from the sheet
+# data = worksheet_copy.get_all_records()
+# pprint(data)
+
+# To get a row for row = 3
+# row = worksheet_copy.row_values(3);
+
+# To get a col for col = 3
+# col = worksheet_copy.col_values(3);
+
+# To get a cell at [1, 2]
+# cell = worksheet_copy.cell(1, 2).value
+
+####### INSERT data
+# row_num = 1
+# insertRow = ["row", "to", "insert", 0]
+# worksheet_copy.insert_row(row, row_num)
+
+###### DELETE data
+# row_num = 1
+# worksheet_copy.delete_row(row_num)
+
+###### UPDATE cell at [1, 2]
+# worksheet_copy.update_cell(1, 2, "new_value")
+
+# worksheet.row_count() ...... to get no of rows
+
+
+""" 
+Steps to follow:
+1. way to configure both google sheets to the code
+2. Backend:
+	1. get all !Yes urls (rows) form DB sheet for the btn clicked column which is also a sheet in Copy
+	2. put urls in the specified sheet in Copy (btn clicked one) in published_link col
+	3. int DB sheet update Yes in the [row, btn_clicked_col]
+3. Frontend:
+	1. make btn for every sheet in Copy 
+	2. btn onclick Backend work is triggered
+"""

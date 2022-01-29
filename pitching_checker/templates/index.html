@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>pitching_checker</title>
+</head>
+<body>
+	<div class="container">
+        
+		<button id="btn-4H">4H</button>
+		<button id="btn-Mobi">Mobi</button>
+        <button id="btn-One">One</button>
+		<button id="btn-TW">TW</button>
+		<button id="btn-TH">TH</button>
+		<button id="btn-IPRL">IPRL</button>
+		<button id="btn-App">App</button>
+		<button id="btn-Tplus">T+</button>
+		<button id="btn-CT">CT</button>
+		<button id="btn-VE">VE</button>
+		<button id="btn-AMT">AMT</button>
+		<button id="btn-MPF">MPF</button>
+		<button id="btn-FP">FP</button>
+		<button id="btn-Can">Can</button>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+            
+            // 4H, Mobi, One, TW, TH, IPRL, App, T+, CT, VE, AMT, MPF, FP, Can 
+            var button4H = document.getElementById('btn-4H');
+            var buttonMobi = document.getElementById('btn-Mobi');
+            var buttonOne = document.getElementById('btn-One');
+            var buttonTW = document.getElementById('btn-TW');
+            var buttonTH = document.getElementById('btn-TH');
+            var buttonIPRL = document.getElementById('btn-IPRL');
+            var buttonApp = document.getElementById('btn-App');
+            var buttonTplus = document.getElementById('btn-Tplus');
+            var buttonCT = document.getElementById('btn-CT');
+            var buttonVE = document.getElementById('btn-VE');
+            var buttonAMT = document.getElementById('btn-AMT');
+            var buttonMPF = document.getElementById('btn-MPF');
+            var buttonFP = document.getElementById('btn-FP');
+            var buttonCan = document.getElementById('btn-Can');
+
+
+            button4H.onclick = function() {
+                $.ajax({
+                    url: '/4H', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonMobi.onclick = function() {
+                $.ajax({
+                    url: '/Mobi', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonOne.onclick = function() {
+                $.ajax({
+                    url: '/One', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonTH.onclick = function() {
+                $.ajax({
+                    url: '/TH', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonTW.onclick = function() {
+                $.ajax({
+                    url: '/TW', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonIPRL.onclick = function() {
+                $.ajax({
+                    url: '/IPRL', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonApp.onclick = function() {
+                $.ajax({
+                    url: '/App', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonTplus.onclick = function() {
+                $.ajax({
+                    url: '/Tplus', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonCT.onclick = function() {
+                $.ajax({
+                    url: '/CT', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonVE.onclick = function() {
+                $.ajax({
+                    url: '/VE', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonAMT.onclick = function() {
+                $.ajax({
+                    url: '/AMT', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonMPF.onclick = function() {
+                $.ajax({
+                    url: '/MPF', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonFP.onclick = function() {
+                $.ajax({
+                    url: '/FP', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+            buttonCan.onclick = function() {
+                $.ajax({
+                    url: '/Can', // to transfer data to 4H from DB
+                    type: 'GET', // get req to backend
+                    success: function(res) { // get the response from backend
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(`error ${error}`);
+                    }
+                })
+			}
+
+
+
+
+
+        </script>
+	</div>
+</body>
+</html>
+
+
+		
