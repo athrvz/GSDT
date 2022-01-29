@@ -14,9 +14,9 @@ gc = gspread.service_account(filename='./gsdt_creds1.json')
 # # worksheet_copy = gc.open('Copy of GP for email shortlister').sheet1
 
 ############### Creating a list of dictionary for O(1) lookup time
-copy_sheets_dict = {
-    "4H": {}, "Mobi": {}, "One": {}, "TW": {}, "TH": {}, "IPRL": {}, "App": {}, "T+": {}, "CT": {}, "VE": {}, "AMT": {}, "MPF": {}, "FP": {}, "Can": {}
-}
+# copy_sheets_dict = {
+#     "4H": {}, "Mobi": {}, "One": {}, "TW": {}, "TH": {}, "IPRL": {}, "App": {}, "T+": {}, "CT": {}, "VE": {}, "AMT": {}, "MPF": {}, "FP": {}, "Can": {}
+# }
 
 ############## Extracting domain name from the url
 # url starts with: https:// 
@@ -73,32 +73,60 @@ available_sheets_dic = {"4H": 2, "Mobi": 3, "One": 4, "TW": 5, "TH": 6, "IPRL": 
 #             worksheet_db.update_cell(i, available_sheets_dic[sheet_name], "YES")
 
 
-def  transfer_data_to(sheet_name):
-    # config Copy worksheet
+
+# def  transfer_data_to(sheet_name):
+#     # config Copy worksheet
+#     worksheet_copy = gc.open('testCopy').worksheet(sheet_name)
+#     for i in range(2, worksheet_db.row_count):
+#         row_db = worksheet_db.row_values(i)
+#         # print("row_db: ", row_db)
+#         if not row_db: # empty row
+#             break
+#         website = row_db[website_index_db]
+#         domain = get_domain(website)
+#         if copy_sheets_dict[sheet_name].get(domain) == None:
+#             # domain not found
+#             worksheet_copy.insert_row([domain], 2) # insert on top
+#             worksheet_db.update_cell(i, available_sheets_dic[sheet_name], "YES")
+#             copy_sheets_dict[sheet_name][domain] = 1 # adding the domain to dictionary
+#             # print(copy_sheets_dict[sheet_name])
+#         else: 
+#             continue
+
+
+def transfer_data_to(sheet_name):
+    # configuring the Copy worksheet
     worksheet_copy = gc.open('testCopy').worksheet(sheet_name)
+        
     for i in range(2, worksheet_db.row_count):
+        found = False
         row_db = worksheet_db.row_values(i)
         # print("row_db: ", row_db)
         if not row_db: # empty row
             break
         website = row_db[website_index_db]
         domain = get_domain(website)
-        if copy_sheets_dict[sheet_name].get(domain) == None:
-            # domain not found
-            worksheet_copy.insert_row([domain], 2) # insert on top
+        # print("website: ", website)
+        for j in range(2, worksheet_copy.row_count):
+            if found:
+                break
+            row_copy = worksheet_copy.row_values(j)
+            # print("row_copy: ", row_copy)
+            if not row_copy:
+                break
+            website_ = row_copy[website_index_copy]
+            # print("website_: ", website_)
+            if domain != website_:
+                continue
+            elif domain == website_:
+                found = True
+        if not found:
+            # print("not found")
+            worksheet_copy.insert_row([domain], i)
             worksheet_db.update_cell(i, available_sheets_dic[sheet_name], "YES")
-            copy_sheets_dict[sheet_name][domain] = 1 # adding the domain to dictionary
-            # print(copy_sheets_dict[sheet_name])
-        else: 
-            continue
-
 
 
 ################## Main Data Transfering implementation #################
-
-
-
-
 
 
 
